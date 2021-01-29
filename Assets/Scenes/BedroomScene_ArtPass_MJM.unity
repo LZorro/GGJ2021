@@ -2763,6 +2763,7 @@ GameObject:
   - component: {fileID: 2015969929}
   - component: {fileID: 2015969934}
   - component: {fileID: 2015969933}
+  - component: {fileID: 2015969935}
   - component: {fileID: 2015969932}
   - component: {fileID: 2015969931}
   - component: {fileID: 2015969930}
@@ -2807,7 +2808,7 @@ MonoBehaviour:
   body: {fileID: 2015969931}
   speed: 10
   rotation_speed: 5
-  jump_power: 15
+  jump_power: 450
 --- !u!54 &2015969931
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2833,9 +2834,9 @@ CapsuleCollider:
   m_GameObject: {fileID: 2015969928}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
-  m_Height: 2
+  m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2015969933
@@ -2887,6 +2888,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2015969928}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &2015969935
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015969928}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.35, z: 2.5}
+  m_Center: {x: 0, y: 0, z: 0.6}
 --- !u!1 &2120555018
 GameObject:
   m_ObjectHideFlags: 0

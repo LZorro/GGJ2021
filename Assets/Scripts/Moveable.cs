@@ -30,22 +30,24 @@ public class Moveable : MonoBehaviour
 	protected virtual void Init ()
 	{	epsilon = 0.001f;
 		phys	= gameObject.GetComponent<Rigidbody>();
-		collider = transform.GetComponent<Collider>();
+		collider = transform.GetComponent<BoxCollider>();
 	}
 
 	protected static bool Suspended { get{ return Public_Const.Suspended; } }
 
 	//Function to check whether or not the player is on solid ground.
 	protected Collider On()
-	{	Collider[] colliders = Physics.OverlapBox
-		(	new Vector3(collider.bounds.center.x , collider.bounds.min.y	 , collider.bounds.center.z ),
-			new Vector3(collider.bounds.extents.x, Public_Const.Contactoffset, collider.bounds.extents.z),
+	{	float offset = Public_Const.Contactoffset;
+		Bounds bowns = collider.bounds;
+		Collider[] colliders = Physics.OverlapBox
+		(	new Vector3(bowns.center.x			, bowns.min.y	, bowns.center.z		),
+			new Vector3(bowns.extents.x-offset	, offset		, bowns.extents.z-offset),
 			Quaternion.identity//transform.rotation,
 			/*ContactFilter,*/
 			/*results,*/ //This is where the results go on some functions, can be ignored since I only need to know that there was a collision.
 			//Public_Const.Solid
 		);
-		if (colliders.Length > 0) return colliders[0];
+		if (colliders.Length > 1) return colliders[0];
 		else return null;
 	}
 

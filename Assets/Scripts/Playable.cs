@@ -31,11 +31,12 @@ public class Playable : Moveable
 	{	horz = Input.GetAxis("Horizontal");
 		latr = Input.GetAxis( "Vertical" );
 		angu = Input.GetAxis("RS_h");//Horizontal Right Stick
+		if (Input.GetButtonDown("Jump") && On()) Jump();
 	}
 
 	
 	private void Jump()
-		=> phys.AddForce(transform.up * jump_power);
+		=> phys.AddForce(transform.forward * jump_power);
 
 
 	private IEnumerator OnCollisionEnter(Collision collision)
