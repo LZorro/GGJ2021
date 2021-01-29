@@ -7,20 +7,30 @@ public class Look_At_Player : MonoBehaviour
 	public float speed;
 	public Moveable player;
 	public Transform camera_point;
-	public Vector3 initial_point;
+	private Vector3 initial_location;//Thus far unused, as camera point doesn't change.
 	[HideInInspector]
-	public Transform player_trans;
+	public float pitch;
+	private Transform player_transform;
 
 	void Start()
-	{	player_trans = player.transform;
-		initial_point = camera_point.position;
+	{	player_transform = player.transform;
+		initial_location = camera_point.localPosition;
+		pitch = 0;
 	}
 
+	void FixedUpdate()
+		{ pitch = Mathf.Clamp(pitch - Input.GetAxis("RS_v"), -90, 90); }
+
 	void Update()
-	{	transform.LookAt(player_trans, Vector3.up);
-		transform.position = Vector3.Lerp(transform.position, camera_point.position, speed);
+	{	transform.position = Vector3.Lerp(transform.position, camera_point.position, speed);
+		if (Input.GetButtonDown("Reset Camera")) ResetCamera();
+		transform.LookAt(player_transform, Vector3.up);
+		transform.Rotate(Vector3.right, pitch);
 	}
 
 	void ResetCamera()
-		=> transform.position = camera_point.position = initial_point;
+	{	camera_point.localPosition = initial_location;//Not currently needed.
+		transform.position = camera_point.position;
+		pitch = 0;
+	}
 }

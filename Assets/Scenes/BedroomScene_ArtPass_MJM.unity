@@ -1283,11 +1283,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33d709a8a29278f4599189dbc572618c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.015
+  speed: 0.02
   player: {fileID: 2015969930}
   camera_point: {fileID: 569538615}
-  initial_point: {x: 0, y: 0, z: 0}
-  player_trans: {fileID: 0}
+  pitch: 0
 --- !u!81 &1511705778
 AudioListener:
   m_ObjectHideFlags: 0
