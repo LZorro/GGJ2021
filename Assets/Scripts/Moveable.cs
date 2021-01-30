@@ -10,7 +10,7 @@ public class Moveable : MonoBehaviour
 	protected Rigidbody phys;
 	public new Collider collider;
 
-	[HideInInspector] public static float epsilon;	//Miniscule amount
+	[HideInInspector] public const float epsilon = 0.001f;	//Miniscule amount
 
 	/// Transform Shortcuts
 	#region Rotation
@@ -28,8 +28,7 @@ public class Moveable : MonoBehaviour
 
 	// Use this for initialization
 	protected virtual void Init ()
-	{	epsilon = 0.001f;
-		phys	= gameObject.GetComponent<Rigidbody>();
+	{	phys	= gameObject.GetComponent<Rigidbody>();
 		collider = transform.GetComponent<BoxCollider>();
 	}
 

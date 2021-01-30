@@ -1935,7 +1935,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33d709a8a29278f4599189dbc572618c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.02
+  speed: 0.025
   player: {fileID: 2015969930}
   camera_point: {fileID: 569538615}
   pitch: 0
@@ -2183,9 +2183,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1624391093}
   - component: {fileID: 1624391094}
+  - component: {fileID: 1624391095}
   m_Layer: 0
-  m_Name: Carrot_Sock
-  m_TagString: Untagged
+  m_Name: Jim_Sock
+  m_TagString: sprite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2244,7 +2245,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5c90835f84030cc4688166e4faa20ad3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f68411d948baff246a72c02c14f6dbc8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2255,6 +2256,31 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1624391095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624391092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4dd9d3c9efc78d4d92ccde89f1654ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftfacing: 1
+  inversespeed: 0.5
+  sprites:
+  - {fileID: 21300000, guid: f68411d948baff246a72c02c14f6dbc8, type: 3}
+  - {fileID: 21300000, guid: 8e94f92b1641ef346b1c13b55eeccc0f, type: 3}
+  - {fileID: 21300000, guid: 65937ab8e75185e4a8a210eddd5550bc, type: 3}
+  - {fileID: 21300000, guid: 59f49f50286f58c4c8b19d8b87842ece, type: 3}
+  - {fileID: 21300000, guid: f1de223d1bd5baf4f8e3fb8efe50b3ff, type: 3}
+  relativeform: {fileID: 1511705780}
+  rgdbdy: {fileID: 2015969931}
+  delta: 0
+  i: 0
+  sprite_rNdr: {fileID: 0}
 --- !u!1 &1687251077
 GameObject:
   m_ObjectHideFlags: 0
@@ -2899,8 +2925,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.35, z: 2.5}
-  m_Center: {x: 0, y: 0, z: 0.6}
+  m_Size: {x: 2.02, y: 0.35, z: 2.4}
+  m_Center: {x: 0, y: 0, z: 0.67}
 --- !u!1 &2120555018
 GameObject:
   m_ObjectHideFlags: 0
