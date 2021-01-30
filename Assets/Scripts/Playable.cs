@@ -62,7 +62,7 @@ public class Playable : Moveable
 
     private void OnTriggerExit(Collider other)
     {
-        GameObject hit = collider.gameObject;
+        GameObject hit = other.gameObject;
         if (hit.tag.Equals("Character"))
         {
             hit.GetComponent<CharacterDialog>().enablePrompt(false);
