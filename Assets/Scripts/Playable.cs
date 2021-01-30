@@ -14,6 +14,8 @@ public class Playable : Moveable
 	private Collider floor_collider;
 	private float horz, latr, angu;
 
+    public GameObject nearbyCharacter = null;
+
 	void Start ()
 	{	Init();
 	}
@@ -32,7 +34,11 @@ public class Playable : Moveable
 		latr = Input.GetAxis( "Vertical" );
 		angu = Input.GetAxis("RS_h");//Horizontal Right Stick
 		if (Input.GetButtonDown("Jump") && On()) Jump();
-	}
+        if (Input.GetButtonDown("Fire1") && nearbyCharacter != null)
+        {
+            nearbyCharacter.GetComponent<CharacterDialog>().advanceDialog();
+        }
+    }
 
 	
 	private void Jump()
@@ -46,6 +52,21 @@ public class Playable : Moveable
 
 	private IEnumerator OnTriggerEnter(Collider collider)
 	{	GameObject hit = collider.gameObject;
+        if (hit.tag.Equals("Character"))
+        {
+            nearbyCharacter = hit;
+            hit.GetComponent<CharacterDialog>().enablePrompt(true);
+        }
 		yield return null;
 	}
+
+    private void OnTriggerExit(Collider other)
+    {
+        GameObject hit = collider.gameObject;
+        if (hit.tag.Equals("Character"))
+        {
+            hit.GetComponent<CharacterDialog>().enablePrompt(false);
+            nearbyCharacter = null;
+        }
+    }
 }
