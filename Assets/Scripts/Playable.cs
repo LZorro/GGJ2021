@@ -11,6 +11,11 @@ public class Playable : Moveable
 	public float rotation_speed;
 	public float jump_power;
 
+#if EXTERNALCAMERA
+#else
+	public const float dampener = 3;
+#endif
+
 	private Collider floor_collider;
 	private float horz, latr, angu;
 
@@ -25,8 +30,7 @@ public class Playable : Moveable
 		var vector = speed * V(direction.x, 0, direction.z).normalized;
 		body.velocity = V(vector.x, body.velocity.y, vector.z);
 		if (horz != 0 || angu != 0)
-		{	transform.Rotate( V(0, 0, horz*rotation_speed) );
-			transform.Rotate( V(0, 0, angu*rotation_speed) );	}
+			transform.Rotate( V(0, 0, (horz/dampener + angu) *rotation_speed) );
 	}
 
 	void Update ()
