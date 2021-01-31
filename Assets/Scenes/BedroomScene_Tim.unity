@@ -3410,6 +3410,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slideshow: {fileID: 1368706858}
   playerCharacter: {fileID: 2015969928}
+  phaseEndRequirements:
+  - {fileID: 11400000, guid: af6c7d06e2a9a3a41bd4cb6de9019ff2, type: 2}
+  - {fileID: 11400000, guid: c61eff32deae4204fbcc142a668da965, type: 2}
 --- !u!4 &1627431722
 Transform:
   m_ObjectHideFlags: 0

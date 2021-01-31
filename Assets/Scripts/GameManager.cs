@@ -8,13 +8,16 @@ public class GameManager : MonoBehaviour
     public GameObject playerCharacter;
 
     private GameObject[] npcs;
+    public List<requirementData> phaseEndRequirements;
     private int currentPhase;
+    private requirementData currentRequirements;
 
     // Start is called before the first frame update
     void Start()
     {
         npcs = GameObject.FindGameObjectsWithTag("Character");
         currentPhase = 0;
+        currentRequirements = phaseEndRequirements[currentPhase];
 
         slideshow.GetComponent<Slideshow>().turnOn(true);
         playerCharacter.GetComponent<Playable>().enabled = false;
@@ -40,11 +43,22 @@ public class GameManager : MonoBehaviour
         bool isComplete = true;
         foreach (GameObject go in npcs)
         {
-            if (go.GetComponent<CharacterDialog>().isDialogComplete == false)
-                isComplete = false;
+            if (isNPCRequired(go))
+                if (go.GetComponent<CharacterDialog>().isDialogComplete == false)
+                    isComplete = false;
         }
 
         return isComplete;
+    }
+
+    private bool isNPCRequired(GameObject go)
+    {
+        foreach (string check in currentRequirements.npcCharacters)
+        {
+            if (go.name == check)
+                return true;
+        }
+        return false;
     }
 
     private void setNextPhase()
@@ -55,5 +69,7 @@ public class GameManager : MonoBehaviour
         {
             go.GetComponent<CharacterDialog>().setNewDialog(currentPhase);
         }
+        if (currentPhase < phaseEndRequirements.Count)
+            currentRequirements = phaseEndRequirements[currentPhase];
     }
 }
