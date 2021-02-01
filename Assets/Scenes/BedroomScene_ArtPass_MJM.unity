@@ -3186,6 +3186,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 367817335536874890, guid: 13db39ec3ea9851429320b8aae2ecabd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5331920624823502625, guid: 13db39ec3ea9851429320b8aae2ecabd,
         type: 3}
       propertyPath: m_Name
@@ -4348,6 +4353,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: af6c7d06e2a9a3a41bd4cb6de9019ff2, type: 2}
   - {fileID: 11400000, guid: c61eff32deae4204fbcc142a668da965, type: 2}
   isGameOver: 0
+  isSlideshowOpen: 0
 --- !u!4 &819383620
 Transform:
   m_ObjectHideFlags: 0

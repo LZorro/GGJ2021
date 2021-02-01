@@ -13,7 +13,4 @@ MonoBehaviour:
   m_Name: Character_Sock Dialog 1
   m_EditorClassIdentifier: 
   npcCharacters:
-  - Hi I'm Bob The Sock!
-  - This is the 2nd thing I say
-  - How about a third thing?
-  - I...think I'm done.
+  - 

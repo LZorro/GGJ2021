@@ -54,9 +54,9 @@ public class CharacterDialog : MonoBehaviour
         if (currentDialogListIndex < dialogList.Count - 1)
         {
             currentdialogList = dialogList[++currentDialogListIndex].npcCharacters;
-            balloonText.text = currentdialogList[currentDialog];
         }
+        balloonText.text = currentdialogList[currentDialog];
 
-        advanceDialog();
+        // advanceDialog();
     }
 }

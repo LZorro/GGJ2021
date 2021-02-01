@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: Character_Bunny Dialog 1
   m_EditorClassIdentifier: 
   npcCharacters:
-  - Wanna do some dust?
-  - '*sniff* YYYEEEAAAHHH!!!'
+  - Hey! Hey, you! Hey. Hey. Hey.
+  - You want that dust? We've got dust.
+  - HEY! Have you heard the word of the Great Bunny?
+  - Let him into your heart and the dust will flow through you!
+  - JOIN US!!!

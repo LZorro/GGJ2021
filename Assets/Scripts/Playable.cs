@@ -22,10 +22,12 @@ public class Playable : Moveable
 	private Sprite_Script sprite_script;
 
     public GameObject nearbyCharacter = null;
+	private GameManager gm;
 
 	void Start ()
 	{	Init();
 		sprite_script = GetComponentInChildren<Sprite_Script>(/*"Jim_Sock"*/);
+		gm = GameObject.FindObjectOfType<GameManager>();
 	}
 	
 	void FixedUpdate ()
@@ -44,7 +46,7 @@ public class Playable : Moveable
 		{	Jump();
 			sprite_script.Jump();
 		}
-        if (Input.GetButtonDown("Fire1") && nearbyCharacter != null)
+        if (Input.GetButtonDown("Fire1") && nearbyCharacter != null && !gm.isSlideshowOpen)
         {
             nearbyCharacter.GetComponent<CharacterDialog>().advanceDialog();
         }

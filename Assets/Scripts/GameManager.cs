@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     private int currentPhase;
     private requirementData currentRequirements;
     public bool isGameOver = false;
+    public bool isSlideshowOpen;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        isSlideshowOpen = slideshow.GetComponent<Canvas>().enabled;
         if (pollForNextPhase() && !isGameOver)
         {
             setNextPhase();

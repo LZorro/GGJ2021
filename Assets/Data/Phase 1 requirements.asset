@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: Phase 1 requirements
   m_EditorClassIdentifier: 
   npcCharacters:
-  - ':::: Character_Sock'
   - ':::: Character_Boot'
   - ':::: Character_Bunny'
