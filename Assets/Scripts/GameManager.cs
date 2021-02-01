@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public List<requirementData> phaseEndRequirements;
     private int currentPhase;
     private requirementData currentRequirements;
+    public bool isGameOver = false;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pollForNextPhase())
+        if (pollForNextPhase() && !isGameOver)
         {
             setNextPhase();
         }
@@ -71,5 +72,7 @@ public class GameManager : MonoBehaviour
         }
         if (currentPhase < phaseEndRequirements.Count)
             currentRequirements = phaseEndRequirements[currentPhase];
+        else
+            isGameOver = true;
     }
 }

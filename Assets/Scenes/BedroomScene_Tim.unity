@@ -364,7 +364,10 @@ MonoBehaviour:
   balloonText: {fileID: 1687251079}
   commandPrompt: {fileID: 1821601388}
   dialogList:
-  - BOOOOOOT
+  - {fileID: 11400000, guid: 2b9d50063165ae5408a29b2427ec046a, type: 2}
+  currentdialogList: []
+  currentDialog: 0
+  currentDialogListIndex: 0
   isDialogComplete: 0
 --- !u!65 &174936366
 BoxCollider:
@@ -1237,10 +1240,11 @@ MonoBehaviour:
   balloonText: {fileID: 881214093}
   commandPrompt: {fileID: 827540822}
   dialogList:
-  - Hi I'm Bob The Sock!
-  - This is the 2nd thing I say
-  - How about a third thing?
-  - I...think I'm done.
+  - {fileID: 11400000, guid: f70ae63e2b6464a4faaacaa1e0bd278f, type: 2}
+  - {fileID: 11400000, guid: 8f6e250247a55824d8cca982d787c7be, type: 2}
+  currentdialogList: []
+  currentDialog: 0
+  currentDialogListIndex: 0
   isDialogComplete: 0
 --- !u!65 &581068697
 BoxCollider:
@@ -3753,8 +3757,10 @@ MonoBehaviour:
   balloonText: {fileID: 1807927905}
   commandPrompt: {fileID: 322907744}
   dialogList:
-  - LET'S DO SOME DUST!
-  - '*sniff* YYYYEEAAHHH!!'
+  - {fileID: 11400000, guid: add2d3529e73cda4b94829ccb719a2a6, type: 2}
+  currentdialogList: []
+  currentDialog: 0
+  currentDialogListIndex: 0
   isDialogComplete: 0
 --- !u!65 &1899322704
 BoxCollider:
