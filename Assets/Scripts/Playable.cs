@@ -12,17 +12,20 @@ public class Playable : Moveable
 	public float jump_power;
 
 #if EXTERNALCAMERA
+	public const float dampener = 1;
 #else
 	public const float dampener = 3;
 #endif
 
 	private Collider floor_collider;
 	private float horz, latr, angu;
+	private Sprite_Script sprite_script;
 
     public GameObject nearbyCharacter = null;
 
 	void Start ()
 	{	Init();
+		sprite_script = GetComponentInChildren<Sprite_Script>(/*"Jim_Sock"*/);
 	}
 	
 	void FixedUpdate ()
@@ -30,14 +33,17 @@ public class Playable : Moveable
 		var vector = speed * V(direction.x, 0, direction.z).normalized;
 		body.velocity = V(vector.x, body.velocity.y, vector.z);
 		if (horz != 0 || angu != 0)
-			transform.Rotate( V(0, 0, (horz/dampener + angu) *rotation_speed) );
+			transform.Rotate( V(0, 0, (horz/dampener + angu) * rotation_speed) );
 	}
 
 	void Update ()
 	{	horz = Input.GetAxis("Horizontal");
 		latr = Input.GetAxis( "Vertical" );
 		angu = Input.GetAxis("RS_h");//Horizontal Right Stick
-		if (Input.GetButtonDown("Jump") && On()) Jump();
+		if (Input.GetButtonDown("Jump") && On())
+		{	Jump();
+			sprite_script.Jump();
+		}
         if (Input.GetButtonDown("Fire1") && nearbyCharacter != null)
         {
             nearbyCharacter.GetComponent<CharacterDialog>().advanceDialog();

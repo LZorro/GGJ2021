@@ -35,7 +35,7 @@ public class Moveable : MonoBehaviour
 	protected static bool Suspended { get{ return Public_Const.Suspended; } }
 
 	//Function to check whether or not the player is on solid ground.
-	protected Collider On()
+	public Collider On()
 	{	float offset = Public_Const.Contactoffset;
 		Bounds bowns = collider.bounds;
 		Collider[] colliders = Physics.OverlapBox
