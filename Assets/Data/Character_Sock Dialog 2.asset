@@ -23,6 +23,18 @@ MonoBehaviour:
   - You must fight just to keep them aliiiive
   - It's the eye of the tiger! It's the thrill of the fight!
   - Rising up to the challenge of our riiival
-  - And the last know survivor
-  - Stalks his prey in the night
+  - And the last know survivor Stalks his prey in the night
   - And he's watching us all with the EYEEEE of the TIGERRR!
+  dialogVFX:
+  - {fileID: 8300000, guid: 571af4e721e09a146be129e1d53a78ee, type: 3}
+  - {fileID: 8300000, guid: 657ed52dc61ef114f82912fe1682c13c, type: 3}
+  - {fileID: 8300000, guid: 360f85a958dbf8049ab4254a6da19db9, type: 3}
+  - {fileID: 8300000, guid: ed2de38057d9d3f4eafecd8f682e75f5, type: 3}
+  - {fileID: 8300000, guid: 34d28b9109ec35740aa30f99a380f03b, type: 3}
+  - {fileID: 8300000, guid: 97253e2eb2c9c3d40bd5fc5dda7f7db7, type: 3}
+  - {fileID: 8300000, guid: 52add9caf7721654bb5a70a3d2723a0b, type: 3}
+  - {fileID: 8300000, guid: ee3203952c9158848ac2ca3b90726030, type: 3}
+  - {fileID: 8300000, guid: 105d9bb8ee5546f4fb66b6cf11b9113f, type: 3}
+  - {fileID: 8300000, guid: 47f8d93ee5cbe49448287917da93ddd2, type: 3}
+  - {fileID: 8300000, guid: 376fdd526172a4a4a809857cacf582bd, type: 3}
+  - {fileID: 8300000, guid: 51a8eb74864b4c04392183f10885bdc1, type: 3}

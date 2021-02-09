@@ -6,4 +6,5 @@ using UnityEngine;
 public class requirementData : ScriptableObject
 {
     public List<string> npcCharacters;
+    public List<AudioClip> dialogVFX;
 }

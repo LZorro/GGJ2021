@@ -18,3 +18,9 @@ MonoBehaviour:
   - HEY! Have you heard the word of the Great Bunny?
   - Let him into your heart and the dust will flow through you!
   - JOIN US!!!
+  dialogVFX:
+  - {fileID: 8300000, guid: 9ed8813a3a2377546b38b05b206e4013, type: 3}
+  - {fileID: 8300000, guid: 6ec99a73349cced429107307a74b9664, type: 3}
+  - {fileID: 8300000, guid: 0e93a3f5b18f04b40b1706ffbd14a7d1, type: 3}
+  - {fileID: 8300000, guid: 770b56267ed59764cafc450764230129, type: 3}
+  - {fileID: 8300000, guid: 4a85274becd97234e863a41c21586848, type: 3}

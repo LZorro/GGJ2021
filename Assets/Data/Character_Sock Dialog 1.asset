@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcCharacters:
   - 
+  dialogVFX:
+  - {fileID: 0}

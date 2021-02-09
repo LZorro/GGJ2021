@@ -19,3 +19,10 @@ MonoBehaviour:
   - Carrying on with their loud rock and roll and their unsupressed emotions!
   - Don't look so glum, chum!
   - Just have to pull yourself up by your bootstraps, I always say!
+  dialogVFX:
+  - {fileID: 8300000, guid: 4ca392b45a9dab7468df046999a2b203, type: 3}
+  - {fileID: 8300000, guid: 85d12a4b08a16f94e81cd9fa9f1751ec, type: 3}
+  - {fileID: 8300000, guid: 8bd917567dc80bc49a26dbd634bb12e2, type: 3}
+  - {fileID: 8300000, guid: 3c13166642a798e49af281fc2d92bd24, type: 3}
+  - {fileID: 8300000, guid: 61488046b82784d46a12e683a5cec050, type: 3}
+  - {fileID: 8300000, guid: b32984ee42d3d63469d5f011d0813cd7, type: 3}

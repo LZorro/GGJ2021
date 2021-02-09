@@ -6,23 +6,28 @@ using UnityEngine.UI;
 public class Slideshow : MonoBehaviour
 {
 
-    public List<Sprite> openingSlideshow;
-    public List<Sprite> midgameSlideshow;
-    public List<Sprite> endingSlideshow;
+    public List<AnimationClip> openingSlideshow;
+    public List<AnimationClip> midgameSlideshow;
+    public List<AnimationClip> endingSlideshow;
 
-    private List<Sprite> currentSlideshow;
+    private List<AnimationClip> currentSlideshow;
     private int currentSlideIndex;
     [SerializeField] private Image currentImage;
+    private Animator currentAnimation;
     private GameManager gm;
 
     // Start is called before the first frame update
     void Start()
     {
         gm = GameObject.FindObjectOfType<GameManager>();
+        currentAnimation = currentImage.gameObject.GetComponent<Animator>();
 
         currentSlideIndex = 0;
         currentSlideshow = openingSlideshow;
-        currentImage.sprite = currentSlideshow[currentSlideIndex];
+        currentAnimation.GetComponent<Animation>().clip = currentSlideshow[currentSlideIndex];
+        currentAnimation.StartPlayback();
+        
+        //currentImage.sprite = currentSlideshow[currentSlideIndex].clip.
     }
 
     // Update is called once per frame
@@ -46,7 +51,8 @@ public class Slideshow : MonoBehaviour
 
     private void advanceSlide()
     {
-        currentImage.sprite = currentSlideshow[++currentSlideIndex];
+        //currentImage.sprite = currentSlideshow[++currentSlideIndex];
+
     }
 
     public void setNewShow(int phaseNum)
