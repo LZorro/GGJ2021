@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public bool isGameOver = false;
     public bool isSlideshowOpen;
 
+    public GameObject confetti;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +34,10 @@ public class GameManager : MonoBehaviour
         if (pollForNextPhase() && !isGameOver)
         {
             setNextPhase();
+        }
+        else if (isGameOver)
+        {
+            confetti.SetActive(true);
         }
     }
 
@@ -67,11 +73,11 @@ public class GameManager : MonoBehaviour
     private void setNextPhase()
     {
         currentPhase++;
-        slideshow.GetComponent<Slideshow>().setNewShow(currentPhase);
         foreach (GameObject go in npcs)
         {
             go.GetComponent<CharacterDialog>().setNewDialog(currentPhase);
         }
+        slideshow.GetComponent<Slideshow>().setNewShow(currentPhase);
         if (currentPhase < phaseEndRequirements.Count)
             currentRequirements = phaseEndRequirements[currentPhase];
         else
