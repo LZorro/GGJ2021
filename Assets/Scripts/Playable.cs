@@ -50,6 +50,8 @@ public class Playable : Moveable
         {
             nearbyCharacter.GetComponent<CharacterDialog>().advanceDialog();
         }
+		if (Input.GetKeyDown(KeyCode.Escape))
+			Application.Quit();
     }
 
 	

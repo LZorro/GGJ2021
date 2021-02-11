@@ -26,6 +26,7 @@ public class Public_Const : MonoBehaviour
 	{
 		//quits the game.
 		if (Input.GetKey(KeyCode.Q)) Application.Quit();
+		if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
 	}
 
 	#region Pausing
